@@ -78,7 +78,7 @@ const VideoPlayer = ({ videoUrl, onCancel }) => {
               {/* Video Player */}
         <div className="w-full h-full flex flex-col items-center justify-center px-4 pt-6">
           {/* Video Frame */}
-          <div className={`w-[95%] max-h-[85vh] aspect-video relative youtube-iframe-blocker`}>
+          <div className={`w-[95%] max-w-7xl max-h-[85vh] aspect-video relative youtube-iframe-blocker`}>
             <div 
               className="absolute inset-0 rounded-lg blur-2xl scale-105" 
               style={{ backgroundColor: ambientColor }}
@@ -139,7 +139,6 @@ const VideoPlayer = ({ videoUrl, onCancel }) => {
               )}
             </button>
 
-            {/* Cancel Button */}
             <button
               onClick={handleCancel}
               className="text-white transition-colors duration-200 p-1.5 rounded-full border border-transparent hover:border-white"
