@@ -75,13 +75,10 @@ const VideoPlayer = ({ videoUrl, onCancel }) => {
       className="fixed inset-0 bg-black ambience-transition" 
       style={{ backgroundColor: `rgba(0, 0, 0, ${backgroundOpacity})` }}
     >
-      {/* Video Player */}
-      <div className="w-full h-full flex flex-col">
-        <div className="flex-1 flex flex-col items-center justify-center pt-10">
-          
-          
+              {/* Video Player */}
+        <div className="w-full h-full flex flex-col items-center justify-center px-4 pt-6">
           {/* Video Frame */}
-          <div className={`w-full max-w-7xl flex-1 relative youtube-iframe-blocker`}>
+          <div className={`w-[95%] max-h-[85vh] aspect-video relative youtube-iframe-blocker`}>
             <div 
               className="absolute inset-0 rounded-lg blur-2xl scale-105" 
               style={{ backgroundColor: ambientColor }}
@@ -95,7 +92,6 @@ const VideoPlayer = ({ videoUrl, onCancel }) => {
               allowFullScreen
             />
           </div>
-        </div>
 
         {/* Controls Bar */}
         <div className="p-4 flex justify-center">
