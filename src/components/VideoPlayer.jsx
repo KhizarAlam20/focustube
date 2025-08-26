@@ -139,7 +139,6 @@ const VideoPlayer = ({ videoUrl, onCancel }) => {
               )}
             </button>
 
-            {/* Cancel Button */}
             <button
               onClick={handleCancel}
               className="text-white transition-colors duration-200 p-1.5 rounded-full border border-transparent hover:border-white"
