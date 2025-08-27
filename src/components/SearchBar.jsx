@@ -9,18 +9,7 @@ import { useSecurity } from '../hooks/useSecurity';
 const SearchBar = ({ onFileSelect, onSearch }) => {
   const [error, setError] = useState('');
   const [searchValue, setSearchValue] = useState('');
-  const [showComingSoon, setShowComingSoon] = useState(false);
   const { validateYouTubeUrl, validateFile, shouldThrottle } = useSecurity();
-
-  const handleFilePickerClick = () => {
-    // Show the "coming soon" pill when file picker is clicked
-    setShowComingSoon(true);
-    
-    // Hide the pill after 3 seconds
-    setTimeout(() => {
-      setShowComingSoon(false);
-    }, 3000);
-  };
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -64,34 +53,12 @@ const SearchBar = ({ onFileSelect, onSearch }) => {
 
   return (
     <div className="relative">
-      {/* Coming Soon Popup Pill - Positioned absolutely above the search bar */}
-      <div 
-        className={`absolute -top-16 left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-in-out ${
-          showComingSoon 
-            ? 'opacity-100 translate-y-0 scale-100' 
-            : 'opacity-0 translate-y-2 scale-95 pointer-events-none'
-        }`}
-      >
-        <div className="bg-[#1e1e1e] border border-white text-white text-xs px-3 py-2 rounded-full shadow-lg whitespace-nowrap">
-          <span className="flex items-center">
-            <svg className="w-3 h-3 mr-1.5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            Feature coming soon
-          </span>
-        </div>
-        {/* Arrow pointing down */}
-        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#1e1e1e]"></div>
-      </div>
-
       <form onSubmit={handleSearch} className="flex items-center bg-[#1e1e1e] w-full max-w-[800px] border border-white">
-        {/* Paper clip icon on left - Now just a visual element that shows the pill */}
-        <div className="p-2 bg-[#1e1e1e] border-r border-white cursor-pointer hover:bg-gray-800 transition-colors">
-          <div className="cursor-pointer" onClick={handleFilePickerClick}>
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
-            </svg>
-          </div>
+        {/* Search icon on left - Visual element only, no click functionality */}
+        <div className="p-2 bg-[#1e1e1e] border-r border-white">
+          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
         </div>
         
         {/* Search input */}
