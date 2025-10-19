@@ -78,6 +78,19 @@ function App() {
         <Header />
         <SearchBar onFileSelect={handleFileSelect} onSearch={handleSearch} />
       </div>
+
+      {/* Product Hunt Badge - Bottom Left */}
+      <div className="absolute bottom-4 left-4">
+        <a href="https://www.producthunt.com/products/focustube-3?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-focustube&#0045;3" target="_blank">
+          <img 
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1027972&theme=light&t=1760865202080" 
+            alt="focustube - Your&#0032;distraction&#0032;free&#0032;YouTube&#0032;zone&#0032;⚠️ | Product Hunt" 
+            style={{width: '150px', height: '32px'}} 
+            width="150" 
+            height="32" 
+          />
+        </a>
+      </div>
     </div>
   );
 }
