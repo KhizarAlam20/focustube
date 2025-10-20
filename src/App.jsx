@@ -4,7 +4,6 @@ import SearchBar from './components/SearchBar';
 import VideoPlayer from './components/VideoPlayer';
 import { APP_CONFIG } from './constants/appConstants';
 import './App.css';
-import { Analytics } from "@vercel/analytics/next"
 
 /**
  * Main App Component - Orchestrates the application flow
